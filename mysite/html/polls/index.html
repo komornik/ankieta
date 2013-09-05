@@ -1,0 +1,15 @@
+{% if latest_poll_list %}
+    
+    {% for poll in latest_poll_list %}
+        <h1>{{ poll.question }}</h1>
+         <font color='red'><ul>
+        {% for choice in poll.choice_set.all %}
+         <li>{{ choice.choice }}</li>
+        {% endfor %}
+    </ul></font>
+    <br><br>
+    {% endfor %}
+    
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
