@@ -1,0 +1,13 @@
+body, html {
+    background: black;
+    color: #aaa;
+}
+
+div.sidebar {
+    with: 300px;
+    margin-left: 20px;
+}
+
+div#sidebar1 {
+    float: right;
+}

@@ -1,5 +1,14 @@
-{% if latest_poll_list %}
-    
+{% extends 'base.html' %}
+
+{% block sidebar %}
+    <ul>{% for poll in latest_poll_list %}
+        <li><a href="{% url 'vote' poll_id=poll.id %}" >{{ poll.question }}</a></li>
+    {% endfor %}</ul>
+
+{% endblock sidebar %}
+
+{% block content %}{{ block.super }}
+{% if latest_poll_list %}    
     {% for poll in latest_poll_list %}
         <h1><a href="{% url 'vote' poll_id=poll.id %}" >{{ poll.question }}</a></h1>
          <font color='red'><ul>
@@ -13,3 +22,4 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+{% endblock content %}

@@ -20,3 +20,7 @@ class PollForm(forms.ModelForm):
     class Meta:
         model = Poll
         fields = ('votes',)
+
+
+class PollForms(forms.ModelForm):
+    pass

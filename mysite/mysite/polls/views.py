@@ -24,9 +24,12 @@ def vote(request, poll_id, template='polls/detail.html'):
         choice = instance.choice_set.get(id=pollform.cleaned_data['votes'])
         choice.votes += 1
         choice.save()
-        return redirect(reverse('results',args=(instance.id,)))
+        return redirect(reverse('results', args=(instance.id,)))
 
-    return render(request, template,{'form': pollform,},)
+    return render(request, template,{
+        'form': pollform,
+        'latest_poll_list': Poll.objects.all().order_by('-pub_date',)[:10]
+    },)
 
 def results(request, poll_id):
     poll = get_object_or_404(Poll, pk=poll_id)
