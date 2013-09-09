@@ -15,8 +15,7 @@ urlpatterns = patterns('mysite.polls.views',
     # Uncomment the next line to enable the admin:
     #url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'index'),
-    url(r'^(?P<poll_id>\d+)/$', 'detail'),
-    url(r'^(?P<poll_id>\d+)/results/$', 'results'),
-    url(r'^(?P<poll_id>\d+)/vote/$', 'vote'),
+    url(r'^(?P<poll_id>\d+)/results/$', 'results', name='results',),
+    url(r'^(?P<poll_id>\d+)/$', 'vote', name='vote',),
     
 )

@@ -1,7 +1,7 @@
 {% if latest_poll_list %}
     
     {% for poll in latest_poll_list %}
-        <h1>{{ poll.question }}</h1>
+        <h1><a href="{% url 'vote' poll_id=poll.id %}" >{{ poll.question }}</a></h1>
          <font color='red'><ul>
         {% for choice in poll.choice_set.all %}
          <li>{{ choice.choice }}</li>

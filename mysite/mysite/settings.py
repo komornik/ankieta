@@ -108,10 +108,16 @@ ROOT_URLCONF = 'mysite.urls'
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/home/krzysztof/Dokumenty/dokumenty/praca/python/projekt2/mysite/html"
+    "/home/krzysztof/Dokumenty/dokumenty/praca/python/ankieta/ankieta/mysite/html"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+)
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    #'django.core.context_processors.auth',
+    'django.core.context_processors.request',
 )
 
 INSTALLED_APPS = (
