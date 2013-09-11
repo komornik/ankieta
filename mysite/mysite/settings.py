@@ -110,7 +110,7 @@ ROOT_URLCONF = 'mysite.urls'
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/home/krzysztof/Dokumenty/dokumenty/praca/python/ankieta/ankieta/mysite/html"
+    "/home/krzysztof/Dokumenty/git/ankieta/mysite/html"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
